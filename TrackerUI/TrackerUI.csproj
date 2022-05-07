@@ -61,30 +61,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateTeam.cs">
+    <Compile Include="Forms\CreateTeam.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateTeam.Designer.cs">
+    <Compile Include="Forms\CreateTeam.Designer.cs">
       <DependentUpon>CreateTeam.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateTournament.cs">
+    <Compile Include="Forms\CreateTournament.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateTournament.Designer.cs">
+    <Compile Include="Forms\CreateTournament.Designer.cs">
       <DependentUpon>CreateTournament.cs</DependentUpon>
     </Compile>
-    <Compile Include="TournamentViewer.cs">
+    <Compile Include="Forms\TournamentViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TournamentViewer.Designer.cs">
+    <Compile Include="Forms\TournamentViewer.Designer.cs">
       <DependentUpon>TournamentViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CreateTeam.resx">
+    <EmbeddedResource Include="Forms\CreateTeam.resx">
       <DependentUpon>CreateTeam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateTournament.resx">
+    <EmbeddedResource Include="Forms\CreateTournament.resx">
       <DependentUpon>CreateTournament.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -96,7 +96,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TournamentViewer.resx">
+    <EmbeddedResource Include="Forms\TournamentViewer.resx">
       <DependentUpon>TournamentViewer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
