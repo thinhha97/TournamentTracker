@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateTeam));
             this.lbTeamName = new System.Windows.Forms.Label();
             this.txtTeamName = new System.Windows.Forms.TextBox();
             this.lbHeader = new System.Windows.Forms.Label();
@@ -35,18 +36,18 @@
             this.cbxSelectTeam = new System.Windows.Forms.ComboBox();
             this.lbSelectTeamMember = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.lbFirstName = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.lbLastName = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lbEmail = new System.Windows.Forms.Label();
+            this.btnCreateMember = new System.Windows.Forms.Button();
             this.txtCellphone = new System.Windows.Forms.TextBox();
             this.lbCellphone = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.lbLastName = new System.Windows.Forms.Label();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.lbFirstName = new System.Windows.Forms.Label();
             this.lbxTeamMembers = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDeleteSelectedTeamMember = new System.Windows.Forms.Button();
-            this.btnCreateMember = new System.Windows.Forms.Button();
             this.btnCreateTeam = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +58,7 @@
             this.lbTeamName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeamName.Location = new System.Drawing.Point(15, 71);
             this.lbTeamName.Name = "lbTeamName";
-            this.lbTeamName.Size = new System.Drawing.Size(157, 37);
+            this.lbTeamName.Size = new System.Drawing.Size(192, 45);
             this.lbTeamName.TabIndex = 13;
             this.lbTeamName.Text = "Team Name";
             // 
@@ -65,7 +66,7 @@
             // 
             this.txtTeamName.Location = new System.Drawing.Point(23, 116);
             this.txtTeamName.Name = "txtTeamName";
-            this.txtTeamName.Size = new System.Drawing.Size(472, 35);
+            this.txtTeamName.Size = new System.Drawing.Size(472, 42);
             this.txtTeamName.TabIndex = 12;
             // 
             // lbHeader
@@ -74,7 +75,7 @@
             this.lbHeader.Font = new System.Drawing.Font("Segoe UI Light", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHeader.Location = new System.Drawing.Point(12, 9);
             this.lbHeader.Name = "lbHeader";
-            this.lbHeader.Size = new System.Drawing.Size(218, 51);
+            this.lbHeader.Size = new System.Drawing.Size(272, 62);
             this.lbHeader.TabIndex = 11;
             this.lbHeader.Text = "Create Team";
             // 
@@ -92,7 +93,7 @@
             this.cbxSelectTeam.FormattingEnabled = true;
             this.cbxSelectTeam.Location = new System.Drawing.Point(21, 208);
             this.cbxSelectTeam.Name = "cbxSelectTeam";
-            this.cbxSelectTeam.Size = new System.Drawing.Size(472, 38);
+            this.cbxSelectTeam.Size = new System.Drawing.Size(472, 44);
             this.cbxSelectTeam.TabIndex = 18;
             // 
             // lbSelectTeamMember
@@ -101,7 +102,7 @@
             this.lbSelectTeamMember.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSelectTeamMember.Location = new System.Drawing.Point(13, 154);
             this.lbSelectTeamMember.Name = "lbSelectTeamMember";
-            this.lbSelectTeamMember.Size = new System.Drawing.Size(319, 45);
+            this.lbSelectTeamMember.Size = new System.Drawing.Size(392, 54);
             this.lbSelectTeamMember.TabIndex = 17;
             this.lbSelectTeamMember.Text = "Select Team Member";
             // 
@@ -123,62 +124,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Member";
             // 
-            // txtFirstName
+            // btnCreateMember
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(156, 43);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(251, 35);
-            this.txtFirstName.TabIndex = 10;
-            // 
-            // lbFirstName
-            // 
-            this.lbFirstName.AutoSize = true;
-            this.lbFirstName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFirstName.Location = new System.Drawing.Point(6, 41);
-            this.lbFirstName.Name = "lbFirstName";
-            this.lbFirstName.Size = new System.Drawing.Size(144, 37);
-            this.lbFirstName.TabIndex = 9;
-            this.lbFirstName.Text = "First Name";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(156, 94);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(251, 35);
-            this.txtLastName.TabIndex = 12;
-            // 
-            // lbLastName
-            // 
-            this.lbLastName.AutoSize = true;
-            this.lbLastName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLastName.Location = new System.Drawing.Point(6, 92);
-            this.lbLastName.Name = "lbLastName";
-            this.lbLastName.Size = new System.Drawing.Size(142, 37);
-            this.lbLastName.TabIndex = 11;
-            this.lbLastName.Text = "Last Name";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(158, 144);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(249, 35);
-            this.txtEmail.TabIndex = 14;
-            // 
-            // lbEmail
-            // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(8, 142);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(82, 37);
-            this.lbEmail.TabIndex = 13;
-            this.lbEmail.Text = "Email";
+            this.btnCreateMember.Location = new System.Drawing.Point(135, 258);
+            this.btnCreateMember.Name = "btnCreateMember";
+            this.btnCreateMember.Size = new System.Drawing.Size(174, 40);
+            this.btnCreateMember.TabIndex = 17;
+            this.btnCreateMember.Text = "Create Member";
+            this.btnCreateMember.UseVisualStyleBackColor = true;
             // 
             // txtCellphone
             // 
             this.txtCellphone.Location = new System.Drawing.Point(158, 198);
             this.txtCellphone.Name = "txtCellphone";
-            this.txtCellphone.Size = new System.Drawing.Size(249, 35);
+            this.txtCellphone.Size = new System.Drawing.Size(249, 42);
             this.txtCellphone.TabIndex = 16;
             // 
             // lbCellphone
@@ -187,18 +146,69 @@
             this.lbCellphone.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCellphone.Location = new System.Drawing.Point(8, 196);
             this.lbCellphone.Name = "lbCellphone";
-            this.lbCellphone.Size = new System.Drawing.Size(138, 37);
+            this.lbCellphone.Size = new System.Drawing.Size(166, 45);
             this.lbCellphone.TabIndex = 15;
             this.lbCellphone.Text = "Cellphone";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(158, 144);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(249, 42);
+            this.txtEmail.TabIndex = 14;
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmail.Location = new System.Drawing.Point(8, 142);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(98, 45);
+            this.lbEmail.TabIndex = 13;
+            this.lbEmail.Text = "Email";
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Location = new System.Drawing.Point(156, 94);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(251, 42);
+            this.txtLastName.TabIndex = 12;
+            // 
+            // lbLastName
+            // 
+            this.lbLastName.AutoSize = true;
+            this.lbLastName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLastName.Location = new System.Drawing.Point(6, 92);
+            this.lbLastName.Name = "lbLastName";
+            this.lbLastName.Size = new System.Drawing.Size(174, 45);
+            this.lbLastName.TabIndex = 11;
+            this.lbLastName.Text = "Last Name";
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(156, 43);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(251, 42);
+            this.txtFirstName.TabIndex = 10;
+            // 
+            // lbFirstName
+            // 
+            this.lbFirstName.AutoSize = true;
+            this.lbFirstName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFirstName.Location = new System.Drawing.Point(6, 41);
+            this.lbFirstName.Name = "lbFirstName";
+            this.lbFirstName.Size = new System.Drawing.Size(176, 45);
+            this.lbFirstName.TabIndex = 9;
+            this.lbFirstName.Text = "First Name";
             // 
             // lbxTeamMembers
             // 
             this.lbxTeamMembers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbxTeamMembers.FormattingEnabled = true;
-            this.lbxTeamMembers.ItemHeight = 30;
+            this.lbxTeamMembers.ItemHeight = 36;
             this.lbxTeamMembers.Location = new System.Drawing.Point(545, 119);
             this.lbxTeamMembers.Name = "lbxTeamMembers";
-            this.lbxTeamMembers.Size = new System.Drawing.Size(335, 512);
+            this.lbxTeamMembers.Size = new System.Drawing.Size(335, 506);
             this.lbxTeamMembers.TabIndex = 21;
             // 
             // label1
@@ -207,7 +217,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(538, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 37);
+            this.label1.Size = new System.Drawing.Size(241, 45);
             this.label1.TabIndex = 22;
             this.label1.Text = "Team Members";
             // 
@@ -220,15 +230,6 @@
             this.btnDeleteSelectedTeamMember.Text = "Delete Selected";
             this.btnDeleteSelectedTeamMember.UseVisualStyleBackColor = true;
             // 
-            // btnCreateMember
-            // 
-            this.btnCreateMember.Location = new System.Drawing.Point(135, 258);
-            this.btnCreateMember.Name = "btnCreateMember";
-            this.btnCreateMember.Size = new System.Drawing.Size(174, 40);
-            this.btnCreateMember.TabIndex = 17;
-            this.btnCreateMember.Text = "Create Member";
-            this.btnCreateMember.UseVisualStyleBackColor = true;
-            // 
             // btnCreateTeam
             // 
             this.btnCreateTeam.Location = new System.Drawing.Point(319, 652);
@@ -240,7 +241,7 @@
             // 
             // CreateTeam
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1034, 731);
@@ -256,6 +257,7 @@
             this.Controls.Add(this.txtTeamName);
             this.Controls.Add(this.lbHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "CreateTeam";
             this.Text = "Create Team";
