@@ -79,6 +79,12 @@
     <Compile Include="Forms\CreateTournament.Designer.cs">
       <DependentUpon>CreateTournament.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TournamentDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TournamentDashboard.Designer.cs">
+      <DependentUpon>TournamentDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TournamentViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateTournament.resx">
       <DependentUpon>CreateTournament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TournamentDashboard.resx">
+      <DependentUpon>TournamentDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
