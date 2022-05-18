@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{5a0b6554-18d0-4f78-a1c5-afe4d01b0867}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -65,5 +65,6 @@
   <ItemGroup>
     <Build Include="Tables\People.sql" />
     <Build Include="Tables\Prizes.sql" />
+    <Build Include="Tables\Teams.sql" />
   </ItemGroup>
 </Project>
