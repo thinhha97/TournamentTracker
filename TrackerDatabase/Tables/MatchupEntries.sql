@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[MatchupEntries]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1000, 1), 
+    [MatchupId] INT NOT NULL, 
+    [ParentMatchupId] INT NOT NULL, 
+    [TeamCompetingId] INT NOT NULL, 
+    [Score] INT NOT NULL DEFAULT 0, 
+    [CreatedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(), 
+    [ModifiedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(), 
+    CONSTRAINT [FK_MatchupEntries_Matchups_MatchupId] FOREIGN KEY ([MatchupId]) REFERENCES [Matchups](Id) ON DELETE CASCADE,
+    CONSTRAINT [FK_MatchupEntries_Matchups_ParentMatchupId] FOREIGN KEY ([ParentMatchupId]) REFERENCES [Matchups](Id) ON DELETE CASCADE
+)
+
+GO
+
+CREATE TRIGGER [dbo].[Trigger_MatchupEntries_Updated]
+    ON [dbo].[MatchupEntries]
+    FOR UPDATE
+    AS
+    BEGIN
+        SET NoCount ON;
+        UPDATE [dbo].[MatchupEntries]
+        SET [ModifiedAt] = GETUTCDATE()
+        WHERE Id IN (SELECT DISTINCT Id FROM inserted);
+    END
