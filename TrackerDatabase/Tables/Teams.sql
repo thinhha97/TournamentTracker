@@ -16,5 +16,5 @@ CREATE TRIGGER [dbo].[Trigger_Teams_Updated]
         SET NoCount ON;
         UPDATE [dbo].[Teams]
         SET [ModifiedAt] = GETUTCDATE()
-        WHERE Id IN (SELECT Id FROM inserted);
+        WHERE Id IN (SELECT DISTINCT Id FROM inserted);
     END
