@@ -66,5 +66,6 @@
     <Build Include="Tables\People.sql" />
     <Build Include="Tables\Prizes.sql" />
     <Build Include="Tables\Teams.sql" />
+    <Build Include="Tables\TeamMembers.sql" />
   </ItemGroup>
 </Project>
