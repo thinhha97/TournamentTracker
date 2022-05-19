@@ -9,19 +9,23 @@ namespace TrackerLibary
     public class PrizeModel
     {
         /// <summary>
-        /// The number of this price.
+        /// The unique identifier for the price.
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
+        /// The numeric identifier for the place.
         /// </summary>
         public int PlaceNumber { get; set; }
         /// <summary>
-        /// The name of this price.
+        /// The friendly name for the place.
         /// </summary>
-        public string? PlaceName { get; set; }
+        public string PlaceName { get; set; }
         /// <summary>
-        /// The reward price for this place.
+        /// The fixed amount earns || 0
         /// </summary>
         public decimal PriceAmount { get; set; }
         /// <summary>
-        /// How many percent does this price hold in all prices.
+        /// The number that represents the percentage of the overall take || 0 (fraction of 1, ex: 0.5).
         /// </summary>
         public double PricePercentage { get; set; }
     }

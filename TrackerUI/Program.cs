@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrackerUI.Forms;
+using TrackerLib.Classes;
 
 namespace TrackerUI
 {
@@ -17,7 +18,10 @@ namespace TrackerUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TournamentViewer());
+
+            GlobalConfig.InitializeConnections();
+
+            Application.Run(new TournamentDashboard());
         }
     }
 }
