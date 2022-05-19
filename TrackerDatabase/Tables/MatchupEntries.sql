@@ -8,7 +8,8 @@
     [CreatedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(), 
     [ModifiedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(), 
     CONSTRAINT [FK_MatchupEntries_Matchups_MatchupId] FOREIGN KEY ([MatchupId]) REFERENCES [Matchups](Id) ON DELETE CASCADE,
-    CONSTRAINT [FK_MatchupEntries_Matchups_ParentMatchupId] FOREIGN KEY ([ParentMatchupId]) REFERENCES [Matchups](Id) ON DELETE CASCADE
+    CONSTRAINT [FK_MatchupEntries_Matchups_ParentMatchupId] FOREIGN KEY ([ParentMatchupId]) REFERENCES [Matchups](Id) ON DELETE NO ACTION, 
+    CONSTRAINT [FK_MatchupEntries_Teams] FOREIGN KEY ([TeamCompetingId]) REFERENCES [Teams]([Id]) ON DELETE NO ACTION
 )
 
 GO
