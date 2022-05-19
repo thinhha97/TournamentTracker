@@ -4,10 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrackerLib
+namespace TrackerLib.Models
 {
     public class PrizeModel
     {
+        public PrizeModel()
+        {
+
+        }
+
+        public PrizeModel(string placeNumber, string placeName, string prizeAmount, string prizePercentage)
+        {
+            PlaceNumber = int.Parse(placeNumber);
+            PlaceName = placeName;
+            PriceAmount = decimal.Parse(prizeAmount);
+            PricePercentage = double.Parse(prizePercentage);
+        }
+
         /// <summary>
         /// The unique identifier for the price.
         /// </summary>

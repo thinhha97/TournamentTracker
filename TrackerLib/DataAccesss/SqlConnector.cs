@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TrackerLib.Interfaces;
+using TrackerLib.Models;
 
-namespace TrackerLib.Classes
+namespace TrackerLib.DataAccess
 {
     public class SqlConnector : IDataConnection
     {
+
         /// <summary>
         /// Save a new price for to the database.
         /// </summary>

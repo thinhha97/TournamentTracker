@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TrackerLib.Classes;
 
-namespace TrackerLib
+namespace TrackerLib.Models
 {
     public class MatchupEntryModel
     {
