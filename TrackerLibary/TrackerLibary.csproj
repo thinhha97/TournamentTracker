@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="PostSharp" Version="6.10.10" />
-  </ItemGroup>
-
 </Project>
