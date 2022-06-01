@@ -15,7 +15,7 @@ namespace TrackerUI.Forms
     public partial class CreateTeam : Form
     {
         private readonly List<PersonModel> availableTeamMembers = GlobalConfig.Connection.ReadPerson_All();
-        private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
+        private readonly List<PersonModel> selectedTeamMembers = new List<PersonModel>();
         public CreateTeam()
         {
             InitializeComponent();

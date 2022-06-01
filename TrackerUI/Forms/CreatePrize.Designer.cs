@@ -102,7 +102,7 @@
             this.txtPrizeAmount.Name = "txtPrizeAmount";
             this.txtPrizeAmount.Size = new System.Drawing.Size(287, 43);
             this.txtPrizeAmount.TabIndex = 7;
-            this.txtPrizeAmount.TextChanged += new System.EventHandler(this.txtPrizeAmount_TextChanged);
+            this.txtPrizeAmount.TextChanged += new System.EventHandler(this.TxtPrizeAmount_TextChanged);
             // 
             // lbPrizePercentage
             // 
@@ -120,7 +120,7 @@
             this.txtPrizePercentage.Name = "txtPrizePercentage";
             this.txtPrizePercentage.Size = new System.Drawing.Size(287, 43);
             this.txtPrizePercentage.TabIndex = 10;
-            this.txtPrizePercentage.TextChanged += new System.EventHandler(this.txtPrizePercentage_TextChanged);
+            this.txtPrizePercentage.TextChanged += new System.EventHandler(this.TxtPrizePercentage_TextChanged);
             // 
             // lbOr
             // 

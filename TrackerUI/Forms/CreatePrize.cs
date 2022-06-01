@@ -76,7 +76,7 @@ namespace TrackerUI.Forms
             return result;
         }
 
-        private void txtPrizeAmount_TextChanged(object sender, EventArgs e)
+        private void TxtPrizeAmount_TextChanged(object sender, EventArgs e)
         {
             if (!String.IsNullOrWhiteSpace(txtPrizeAmount.Text) && txtPrizeAmount.Text != "0")
             {
@@ -88,7 +88,7 @@ namespace TrackerUI.Forms
             }
         }
 
-        private void txtPrizePercentage_TextChanged(object sender, EventArgs e)
+        private void TxtPrizePercentage_TextChanged(object sender, EventArgs e)
         {
             if (!String.IsNullOrWhiteSpace(txtPrizePercentage.Text) && txtPrizePercentage.Text != "0")
             {
