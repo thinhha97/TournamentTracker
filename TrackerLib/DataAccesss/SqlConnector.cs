@@ -56,5 +56,16 @@ namespace TrackerLib.DataAccess
                 return model;
             }
         }
+        public List<PersonModel> ReadPerson_All()
+        {
+            List<PersonModel> result;
+            using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(
+                GlobalConfig.GetConnectionString("TournamentTracker"))
+                )
+            {
+                result = conn.Query<PersonModel>("People_GetAll", commandType: CommandType.StoredProcedure).ToList();
+            }
+            return result;
+        }
     }
 }
