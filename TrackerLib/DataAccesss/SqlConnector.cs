@@ -88,6 +88,37 @@ namespace TrackerLib.DataAccess
             using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(
                 GlobalConfig.ConnectionString))
             {
+                var p = new DynamicParameters();
+                p.Add("@TournamentName", tournamentModel.TournamentName);
+                p.Add("@EntryFee", tournamentModel.EntryFee);
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                conn.Execute("Tournaments_InsertTournament", p, commandType: CommandType.StoredProcedure);
+
+                tournamentModel.Id = p.Get<int>("@id");
+
+                foreach(TeamModel teamModel in tournamentModel.EnteredTeams)
+                {
+                    p = new DynamicParameters();
+                    p.Add("@TournamentId", tournamentModel.Id);
+                    p.Add("@TeamId", teamModel.Id);
+                    p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                    conn.Execute("TournamentEntries_InsertTournamentEntry", p, commandType: CommandType.StoredProcedure);
+
+                }
+
+                foreach(PrizeModel prizeModel in tournamentModel.Prizes)
+                {
+                    p = new DynamicParameters();
+                    p.Add("@TournamentId", tournamentModel.Id);
+                    p.Add("@PrizeId", prizeModel.Id);
+                    p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                    conn.Execute("TournamentPrizes_InsertTournamentPrize", p, commandType: CommandType.StoredProcedure);
+
+                }
+                return tournamentModel;
 
             }
         }
