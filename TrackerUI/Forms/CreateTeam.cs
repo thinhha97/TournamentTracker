@@ -91,7 +91,7 @@ namespace TrackerUI.Forms
 
                 selectedTeamMembers.Add(personModel);
 
-                SetDataSourceForLists(); 
+                SetDataSourceForLists();
             }
         }
 
@@ -105,8 +105,16 @@ namespace TrackerUI.Forms
 
                 availableTeamMembers.Add(personModel);
 
-                SetDataSourceForLists(); 
+                SetDataSourceForLists();
             }
+        }
+
+        private void btnCreateTeam_Click(object sender, EventArgs e)
+        {
+            TeamModel teamModel = new TeamModel();
+            teamModel.TeamName = txtTeamName.Text;
+            teamModel.TeamMembers = selectedTeamMembers;
+            GlobalConfig.Connection.CreateTeam(teamModel);
         }
     }
 }
