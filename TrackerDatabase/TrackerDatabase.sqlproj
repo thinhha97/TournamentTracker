@@ -76,5 +76,9 @@
     <Build Include="Programmability\Stored Procedures\Prizes_InsertPrize.sql" />
     <Build Include="Programmability\Stored Procedures\People_InsertPerson.sql" />
     <Build Include="Programmability\Stored Procedures\People_GetAll.sql" />
+    <Build Include="Programmability\Stored Procedures\Teams_InsertTeam.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="TrackerDatabase.refactorlog" />
   </ItemGroup>
 </Project>
