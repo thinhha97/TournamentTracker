@@ -1,0 +1,6 @@
+﻿CREATE PROCEDURE [dbo].[Teams_GetAll]
+AS
+BEGIN
+	SET NoCOUNT ON;
+	SELECT * FROM [dbo].[Teams];
+END
