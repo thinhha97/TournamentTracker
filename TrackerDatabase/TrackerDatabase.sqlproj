@@ -81,5 +81,6 @@
     <Build Include="Programmability\Stored Procedures\Teams_GetAll.sql" />
     <Build Include="Programmability\Stored Procedures\GetTeamMembersByTeamId.sql" />
     <Build Include="Programmability\Stored Procedures\Tournaments_InsertTournament.sql" />
+    <Build Include="Programmability\Stored Procedures\TournamentPrizes_InsertTournamentPrize.sql" />
   </ItemGroup>
 </Project>
