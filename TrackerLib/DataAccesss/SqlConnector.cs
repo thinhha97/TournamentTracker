@@ -11,10 +11,10 @@ namespace TrackerLib.DataAccess
     {
 
         /// <summary>
-        /// Save a new price for to the database.
+        /// Save a new prize for to the database.
         /// </summary>
-        /// <param name="model">The price information.</param>
-        /// <returns>The price information includes its Id.</returns>
+        /// <param name="model">The prize information.</param>
+        /// <returns>The prize information includes its Id.</returns>
         public PrizeModel CreatePrize(PrizeModel model)
         {
             model.Id = 1;

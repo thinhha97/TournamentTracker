@@ -15,14 +15,21 @@ namespace TrackerLib.Models
 
         public PrizeModel(string placeNumber, string placeName, string prizeAmount, string prizePercentage)
         {
-            PlaceNumber = int.Parse(placeNumber);
             PlaceName = placeName;
-            PriceAmount = decimal.Parse(prizeAmount);
-            PricePercentage = double.Parse(prizePercentage);
+            
+            int.TryParse(placeNumber, out int PlaceNumberValue);
+            PlaceNumber = PlaceNumberValue;
+
+            decimal.TryParse(prizeAmount, out decimal PrizeAmountValue);
+            PrizeAmount = PrizeAmountValue;
+
+            double.TryParse(prizePercentage, out double PrizePercentageValue);
+            PrizePercentage = PrizePercentageValue;
+            
         }
 
         /// <summary>
-        /// The unique identifier for the price.
+        /// The unique identifier for the prize.
         /// </summary>
         public int Id { get; set; }
         /// <summary>
@@ -36,10 +43,10 @@ namespace TrackerLib.Models
         /// <summary>
         /// The fixed amount earns || 0
         /// </summary>
-        public decimal PriceAmount { get; set; }
+        public decimal PrizeAmount { get; set; }
         /// <summary>
         /// The number that represents the percentage of the overall take || 0 (fraction of 1, ex: 0.5).
         /// </summary>
-        public double PricePercentage { get; set; }
+        public double PrizePercentage { get; set; }
     }
 }

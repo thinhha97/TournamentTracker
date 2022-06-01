@@ -21,7 +21,7 @@ namespace TrackerLib.Models
         /// </summary>
         public List<TeamModel> EnteredTeams { get; set; } = new List<TeamModel>();
         /// <summary>
-        /// Price list for this tournament.
+        /// Prize list for this tournament.
         /// </summary>
         public List<PrizeModel> Prizes { get; set; } = new List<PrizeModel>();
         /// <summary>
