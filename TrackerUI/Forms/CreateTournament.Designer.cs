@@ -39,9 +39,9 @@
             this.lnklbCreateNew = new System.Windows.Forms.LinkLabel();
             this.btnAddTeam = new System.Windows.Forms.Button();
             this.btnCreatePrize = new System.Windows.Forms.Button();
-            this.lbxTournamentPlayers = new System.Windows.Forms.ListBox();
+            this.lbxTournamentTeams = new System.Windows.Forms.ListBox();
             this.lbTeams = new System.Windows.Forms.Label();
-            this.btnDeleteSelectedPlayer = new System.Windows.Forms.Button();
+            this.btnDeleteSelectedTeam = new System.Windows.Forms.Button();
             this.btnDeleteSelectedPrize = new System.Windows.Forms.Button();
             this.lbPrizes = new System.Windows.Forms.Label();
             this.lbxPrizesList = new System.Windows.Forms.ListBox();
@@ -129,6 +129,7 @@
             this.btnAddTeam.TabIndex = 9;
             this.btnAddTeam.Text = "Add Team";
             this.btnAddTeam.UseVisualStyleBackColor = true;
+            this.btnAddTeam.Click += new System.EventHandler(this.BtnAddTeam_Click);
             // 
             // btnCreatePrize
             // 
@@ -138,15 +139,16 @@
             this.btnCreatePrize.TabIndex = 10;
             this.btnCreatePrize.Text = "Create Prize";
             this.btnCreatePrize.UseVisualStyleBackColor = true;
+            this.btnCreatePrize.Click += new System.EventHandler(this.BtnCreatePrize_Click);
             // 
-            // lbxTournamentPlayers
+            // lbxTournamentTeams
             // 
-            this.lbxTournamentPlayers.FormattingEnabled = true;
-            this.lbxTournamentPlayers.ItemHeight = 37;
-            this.lbxTournamentPlayers.Location = new System.Drawing.Point(494, 119);
-            this.lbxTournamentPlayers.Name = "lbxTournamentPlayers";
-            this.lbxTournamentPlayers.Size = new System.Drawing.Size(307, 152);
-            this.lbxTournamentPlayers.TabIndex = 12;
+            this.lbxTournamentTeams.FormattingEnabled = true;
+            this.lbxTournamentTeams.ItemHeight = 37;
+            this.lbxTournamentTeams.Location = new System.Drawing.Point(494, 119);
+            this.lbxTournamentTeams.Name = "lbxTournamentTeams";
+            this.lbxTournamentTeams.Size = new System.Drawing.Size(307, 152);
+            this.lbxTournamentTeams.TabIndex = 12;
             // 
             // lbTeams
             // 
@@ -158,14 +160,15 @@
             this.lbTeams.TabIndex = 11;
             this.lbTeams.Text = "Teams";
             // 
-            // btnDeleteSelectedPlayer
+            // btnDeleteSelectedTeam
             // 
-            this.btnDeleteSelectedPlayer.Location = new System.Drawing.Point(837, 156);
-            this.btnDeleteSelectedPlayer.Name = "btnDeleteSelectedPlayer";
-            this.btnDeleteSelectedPlayer.Size = new System.Drawing.Size(111, 68);
-            this.btnDeleteSelectedPlayer.TabIndex = 13;
-            this.btnDeleteSelectedPlayer.Text = "Delete Selected";
-            this.btnDeleteSelectedPlayer.UseVisualStyleBackColor = true;
+            this.btnDeleteSelectedTeam.Location = new System.Drawing.Point(837, 156);
+            this.btnDeleteSelectedTeam.Name = "btnDeleteSelectedTeam";
+            this.btnDeleteSelectedTeam.Size = new System.Drawing.Size(111, 68);
+            this.btnDeleteSelectedTeam.TabIndex = 13;
+            this.btnDeleteSelectedTeam.Text = "Delete Selected";
+            this.btnDeleteSelectedTeam.UseVisualStyleBackColor = true;
+            this.btnDeleteSelectedTeam.Click += new System.EventHandler(this.BtnDeleteSelectedTeam_Click);
             // 
             // btnDeleteSelectedPrize
             // 
@@ -214,9 +217,9 @@
             this.Controls.Add(this.btnDeleteSelectedPrize);
             this.Controls.Add(this.lbPrizes);
             this.Controls.Add(this.lbxPrizesList);
-            this.Controls.Add(this.btnDeleteSelectedPlayer);
+            this.Controls.Add(this.btnDeleteSelectedTeam);
             this.Controls.Add(this.lbTeams);
-            this.Controls.Add(this.lbxTournamentPlayers);
+            this.Controls.Add(this.lbxTournamentTeams);
             this.Controls.Add(this.btnCreatePrize);
             this.Controls.Add(this.btnAddTeam);
             this.Controls.Add(this.lnklbCreateNew);
@@ -249,9 +252,9 @@
         private System.Windows.Forms.LinkLabel lnklbCreateNew;
         private System.Windows.Forms.Button btnAddTeam;
         private System.Windows.Forms.Button btnCreatePrize;
-        private System.Windows.Forms.ListBox lbxTournamentPlayers;
+        private System.Windows.Forms.ListBox lbxTournamentTeams;
         private System.Windows.Forms.Label lbTeams;
-        private System.Windows.Forms.Button btnDeleteSelectedPlayer;
+        private System.Windows.Forms.Button btnDeleteSelectedTeam;
         private System.Windows.Forms.Button btnDeleteSelectedPrize;
         private System.Windows.Forms.Label lbPrizes;
         private System.Windows.Forms.ListBox lbxPrizesList;
