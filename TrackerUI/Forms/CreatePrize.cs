@@ -31,13 +31,10 @@ namespace TrackerUI.Forms
                     txtPrizeAmount.Text,
                     txtPrizePercentage.Text
                     );
-                foreach (IDataConnection dc in GlobalConfig.Connections)
-                {
-                    dc.CreatePrize(prizeModel);
-                }
+                GlobalConfig.Connection.CreatePrize(prizeModel);
                 txtPlaceNumber.Text = "";
                 txtPlaceName.Text = "";
-                txtPrizeAmount.Text = "0";
+                txtPrizeAmount.Text = "0";  
                 txtPrizePercentage.Text = "0";
             }
             else
