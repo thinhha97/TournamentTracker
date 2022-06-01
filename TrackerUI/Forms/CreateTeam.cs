@@ -14,9 +14,22 @@ namespace TrackerUI.Forms
 {
     public partial class CreateTeam : Form
     {
+        private readonly List<PersonModel> availableTeamMembers = GlobalConfig.Connection.ReadPerson_All();
+        private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
         public CreateTeam()
         {
             InitializeComponent();
+            SetDataSourceForLists();
+        }
+        private void SetDataSourceForLists()
+        {
+            cbxSelectTeam.DataSource = null;
+            cbxSelectTeam.DataSource = availableTeamMembers;
+            cbxSelectTeam.DisplayMember = "FullName";
+
+            lbxTeamMembers.DataSource = null;
+            lbxTeamMembers.DataSource = selectedTeamMembers;
+            lbxTeamMembers.DisplayMember = "FullName";
         }
 
         private void btnCreateMember_Click(object sender, EventArgs e)
@@ -31,7 +44,17 @@ namespace TrackerUI.Forms
 
                 GlobalConfig.Connection.CreatePerson(personModel);
 
-            } else
+                selectedTeamMembers.Add(personModel);
+
+                SetDataSourceForLists();
+
+                txtFirstName.Text = "";
+                txtLastName.Text = "";
+                txtEmail.Text = "";
+                txtCellphone.Text = "";
+
+            }
+            else
             {
                 MessageBox.Show("You need to fill all fields.");
             }
@@ -55,8 +78,35 @@ namespace TrackerUI.Forms
             {
                 return false;
             }
-
             return true;
+        }
+
+        private void btnAddTeamMember_Click(object sender, EventArgs e)
+        {
+            PersonModel personModel = (PersonModel)cbxSelectTeam.SelectedItem;
+
+            if (personModel != null)
+            {
+                availableTeamMembers.Remove(personModel);
+
+                selectedTeamMembers.Add(personModel);
+
+                SetDataSourceForLists(); 
+            }
+        }
+
+        private void btnDeleteSelectedTeamMember_Click(object sender, EventArgs e)
+        {
+            PersonModel personModel = (PersonModel)lbxTeamMembers.SelectedItem;
+
+            if (personModel != null)
+            {
+                selectedTeamMembers.Remove(personModel);
+
+                availableTeamMembers.Add(personModel);
+
+                SetDataSourceForLists(); 
+            }
         }
     }
 }

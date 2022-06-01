@@ -81,17 +81,18 @@
             // 
             // btnAddTeamMember
             // 
-            this.btnAddTeamMember.Location = new System.Drawing.Point(158, 255);
+            this.btnAddTeamMember.Location = new System.Drawing.Point(123, 261);
             this.btnAddTeamMember.Name = "btnAddTeamMember";
-            this.btnAddTeamMember.Size = new System.Drawing.Size(174, 40);
+            this.btnAddTeamMember.Size = new System.Drawing.Size(272, 40);
             this.btnAddTeamMember.TabIndex = 6;
             this.btnAddTeamMember.Text = "Add Team Member";
             this.btnAddTeamMember.UseVisualStyleBackColor = true;
+            this.btnAddTeamMember.Click += new System.EventHandler(this.btnAddTeamMember_Click);
             // 
             // cbxSelectTeam
             // 
             this.cbxSelectTeam.FormattingEnabled = true;
-            this.cbxSelectTeam.Location = new System.Drawing.Point(21, 208);
+            this.cbxSelectTeam.Location = new System.Drawing.Point(23, 211);
             this.cbxSelectTeam.Name = "cbxSelectTeam";
             this.cbxSelectTeam.Size = new System.Drawing.Size(472, 44);
             this.cbxSelectTeam.TabIndex = 5;
@@ -230,6 +231,7 @@
             this.btnDeleteSelectedTeamMember.TabIndex = 19;
             this.btnDeleteSelectedTeamMember.Text = "Delete Selected";
             this.btnDeleteSelectedTeamMember.UseVisualStyleBackColor = true;
+            this.btnDeleteSelectedTeamMember.Click += new System.EventHandler(this.btnDeleteSelectedTeamMember_Click);
             // 
             // btnCreateTeam
             // 
