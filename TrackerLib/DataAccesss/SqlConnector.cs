@@ -32,30 +32,57 @@ namespace TrackerLib.DataAccess
         }
 
         /// <summary>
-        /// Save a new prize for to the database.
+        /// Save a new prize to the database.
         /// </summary>
-        /// <param name="model">The prize information.</param>
+        /// <param name="prizeModel">The prize information.</param>
         /// <returns>The prize information includes its Id.</returns>
-        public PrizeModel CreatePrize(PrizeModel model)
+        public PrizeModel CreatePrize(PrizeModel prizeModel)
         {
             using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(
                 GlobalConfig.GetConnectionString("TournamentTracker"))
                 )
             {
                 var p = new DynamicParameters();
-                p.Add("@PlaceNumber", model.PlaceNumber);
-                p.Add("@PlaceName", model.PlaceName);
-                p.Add("@PrizeAmount", model.PrizeAmount);
-                p.Add("@PrizePercentage", model.PrizePercentage);
+                p.Add("@PlaceNumber", prizeModel.PlaceNumber);
+                p.Add("@PlaceName", prizeModel.PlaceName);
+                p.Add("@PrizeAmount", prizeModel.PrizeAmount);
+                p.Add("@PrizePercentage", prizeModel.PrizePercentage);
                 p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 conn.Execute("Prizes_InsertPrize", p, commandType: CommandType.StoredProcedure);
 
-                model.Id = p.Get<int>("@id");
+                prizeModel.Id = p.Get<int>("@id");
 
-                return model;
+                return prizeModel;
             }
         }
+
+        public TeamModel CreateTeam(TeamModel teamModel)
+        {
+            using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(
+                GlobalConfig.GetConnectionString("TournamentTracker")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@TeamName", teamModel.TeamName);
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                conn.Execute("Teams_InsertTeam", p, commandType: CommandType.StoredProcedure);
+
+                teamModel.Id = p.Get<int>("@id");
+
+                foreach (PersonModel teamMember in teamModel.TeamMembers)
+                {
+                    p = new DynamicParameters();
+                    p.Add("@TeamId", teamModel.Id);
+                    p.Add("@PersonId", teamMember.Id);
+
+                    conn.Execute("TeamMembers_InsertTeamMember", p, commandType: CommandType.StoredProcedure);
+                }
+
+                return teamModel;
+            }
+        }
+
         public List<PersonModel> ReadPerson_All()
         {
             List<PersonModel> result;
