@@ -132,6 +132,7 @@
             this.btnCreateMember.TabIndex = 16;
             this.btnCreateMember.Text = "Create Member";
             this.btnCreateMember.UseVisualStyleBackColor = true;
+            this.btnCreateMember.Click += new System.EventHandler(this.btnCreateMember_Click);
             // 
             // txtCellphone
             // 

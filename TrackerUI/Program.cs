@@ -21,7 +21,7 @@ namespace TrackerUI
 
             GlobalConfig.InitializeConnections();
 
-            Application.Run(new CreatePrize());
+            Application.Run(new CreateTeam());
         }
     }
 }
