@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrackerLib.Classes;
 using TrackerLib.Models;
+using TrackerUI.Interface;
 
 namespace TrackerUI.Forms
 {
-    public partial class CreateTournament : Form
+    public partial class CreateTournament : Form, IPrizeRequester
     {
         readonly List<TeamModel> availableTeams = GlobalConfig.Connection.ReadTeam_All();
         readonly List<TeamModel> selectedTeams = new List<TeamModel>();
@@ -34,7 +35,7 @@ namespace TrackerUI.Forms
 
             lbxPrizesList.DataSource = null;
             lbxPrizesList.DataSource = selectedPrizes;
-            lbxPrizesList.DisplayMember = "PlaceName ";
+            lbxPrizesList.DisplayMember = "PlaceName";
 
         }
 
@@ -68,8 +69,24 @@ namespace TrackerUI.Forms
 
         private void BtnCreatePrize_Click(object sender, EventArgs e)
         {
-            CreatePrize frm = new CreatePrize();
+            CreatePrize frm = new CreatePrize(this);
             frm.Show();
+        }
+
+        public void PrizeComplete(PrizeModel prizeModel)
+        {
+            selectedPrizes.Add(prizeModel);
+            InitializeLists();
+        }
+
+        private void btnDeleteSelectedPrize_Click(object sender, EventArgs e)
+        {
+            PrizeModel prizeModel = (PrizeModel)lbxPrizesList.SelectedItem;
+            if (prizeModel != null)
+            {
+                selectedPrizes.Remove(prizeModel);
+                InitializeLists();
+            }
         }
     }
 }
