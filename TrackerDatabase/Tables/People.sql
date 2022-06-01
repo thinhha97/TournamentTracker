@@ -3,8 +3,8 @@
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1000, 1), 
     [FirstName] NVARCHAR(20) NOT NULL, 
     [LastName] NVARCHAR(50) NOT NULL, 
-    [EmailAddress] NVARCHAR(50) NOT NULL, 
-    [PhoneNumber] NCHAR(10) NOT NULL, 
+    [EmailAddress] NVARCHAR(100) NOT NULL, 
+    [PhoneNumber] VARCHAR(10) NOT NULL, 
     [CreatedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(), 
     [ModifiedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE()
 )
