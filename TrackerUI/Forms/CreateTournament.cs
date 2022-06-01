@@ -103,7 +103,27 @@ namespace TrackerUI.Forms
 
         private void BtnCreateTournament_Click(object sender, EventArgs e)
         {
-
+            TournamentModel tournamentModel = new TournamentModel
+            {
+                TournamentName = txtTournamentName.Text
+            };
+            bool validFee = decimal.TryParse(txtEntryFee.Text, out decimal entryFee);
+            if (validFee)
+            {
+                tournamentModel.EntryFee = entryFee;
+            }
+            else
+            {
+                MessageBox.Show(
+                    "You need to enter a valid entry fee.",
+                    "Invalid Fee",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            tournamentModel.EnteredTeams = selectedTeams;
+            tournamentModel.Prizes = selectedPrizes;
+            GlobalConfig.Connection.CreateTournament(tournamentModel);
         }
     }
 }
