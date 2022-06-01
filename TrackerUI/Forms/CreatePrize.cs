@@ -29,13 +29,18 @@ namespace TrackerUI.Forms
                     txtPlaceNumber.Text,
                     txtPlaceName.Text,
                     txtPrizeAmount.Text,
-                    txtPricePercentage.Text
+                    txtPrizePercentage.Text
                     );
-                foreach(IDataConnection dc in GlobalConfig.Connections)
+                foreach (IDataConnection dc in GlobalConfig.Connections)
                 {
                     dc.CreatePrize(prizeModel);
                 }
-            } else
+                txtPlaceNumber.Text = "";
+                txtPlaceName.Text = "";
+                txtPrizeAmount.Text = "0";
+                txtPrizePercentage.Text = "0";
+            }
+            else
             {
                 MessageBox.Show("This form has invalid information(s). Please check and retry.");
             }
@@ -59,9 +64,9 @@ namespace TrackerUI.Forms
             }
 
             bool prizeAmountValid = decimal.TryParse(txtPrizeAmount.Text, out decimal prizeAmount);
-            bool prizePercentageValid = double.TryParse(txtPricePercentage.Text, out double prizePercentage);
+            bool prizePercentageValid = double.TryParse(txtPrizePercentage.Text, out double prizePercentage);
 
-            if (prizeAmountValid || prizePercentageValid)
+            if (!prizeAmountValid && !prizePercentageValid)
             {
                 result = false;
             }
@@ -72,6 +77,36 @@ namespace TrackerUI.Forms
             }
 
             return result;
+        }
+
+        private void txtPrizeAmount_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(txtPrizeAmount.Text) && txtPrizeAmount.Text != "0")
+            {
+                txtPrizePercentage.Enabled = false;
+            }
+            else
+            {
+                txtPrizePercentage.Enabled = true;
+            }
+        }
+
+        private void txtPrizePercentage_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(txtPrizePercentage.Text) && txtPrizePercentage.Text != "0")
+            {
+                txtPrizeAmount.Enabled = false;
+            }
+            else
+            {
+                txtPrizeAmount.Enabled = true;
+            }
+        }
+
+        private void CreatePrize_Load(object sender, EventArgs e)
+        {
+            txtPrizeAmount.Text = "0";
+            txtPrizePercentage.Text = "0";
         }
     }
 }

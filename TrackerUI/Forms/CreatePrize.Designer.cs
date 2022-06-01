@@ -34,10 +34,10 @@
             this.lbHeader = new System.Windows.Forms.Label();
             this.lbPlaceName = new System.Windows.Forms.Label();
             this.txtPlaceName = new System.Windows.Forms.TextBox();
-            this.lbPriceAmount = new System.Windows.Forms.Label();
+            this.lbPrizeAmount = new System.Windows.Forms.Label();
             this.txtPrizeAmount = new System.Windows.Forms.TextBox();
-            this.lbPricePercentage = new System.Windows.Forms.Label();
-            this.txtPricePercentage = new System.Windows.Forms.TextBox();
+            this.lbPrizePercentage = new System.Windows.Forms.Label();
+            this.txtPrizePercentage = new System.Windows.Forms.TextBox();
             this.lbOr = new System.Windows.Forms.Label();
             this.btnCreatePrize = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -86,15 +86,15 @@
             this.txtPlaceName.Size = new System.Drawing.Size(287, 43);
             this.txtPlaceName.TabIndex = 5;
             // 
-            // lbPriceAmount
+            // lbPrizeAmount
             // 
-            this.lbPriceAmount.AutoSize = true;
-            this.lbPriceAmount.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPriceAmount.Location = new System.Drawing.Point(12, 224);
-            this.lbPriceAmount.Name = "lbPriceAmount";
-            this.lbPriceAmount.Size = new System.Drawing.Size(215, 45);
-            this.lbPriceAmount.TabIndex = 6;
-            this.lbPriceAmount.Text = "Prize Amount";
+            this.lbPrizeAmount.AutoSize = true;
+            this.lbPrizeAmount.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrizeAmount.Location = new System.Drawing.Point(12, 224);
+            this.lbPrizeAmount.Name = "lbPrizeAmount";
+            this.lbPrizeAmount.Size = new System.Drawing.Size(215, 45);
+            this.lbPrizeAmount.TabIndex = 6;
+            this.lbPrizeAmount.Text = "Prize Amount";
             // 
             // txtPrizeAmount
             // 
@@ -102,23 +102,25 @@
             this.txtPrizeAmount.Name = "txtPrizeAmount";
             this.txtPrizeAmount.Size = new System.Drawing.Size(287, 43);
             this.txtPrizeAmount.TabIndex = 7;
+            this.txtPrizeAmount.TextChanged += new System.EventHandler(this.txtPrizeAmount_TextChanged);
             // 
-            // lbPricePercentage
+            // lbPrizePercentage
             // 
-            this.lbPricePercentage.AutoSize = true;
-            this.lbPricePercentage.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPricePercentage.Location = new System.Drawing.Point(12, 382);
-            this.lbPricePercentage.Name = "lbPricePercentage";
-            this.lbPricePercentage.Size = new System.Drawing.Size(258, 45);
-            this.lbPricePercentage.TabIndex = 9;
-            this.lbPricePercentage.Text = "Prize Percentage";
+            this.lbPrizePercentage.AutoSize = true;
+            this.lbPrizePercentage.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrizePercentage.Location = new System.Drawing.Point(12, 382);
+            this.lbPrizePercentage.Name = "lbPrizePercentage";
+            this.lbPrizePercentage.Size = new System.Drawing.Size(258, 45);
+            this.lbPrizePercentage.TabIndex = 9;
+            this.lbPrizePercentage.Text = "Prize Percentage";
             // 
-            // txtPricePercentage
+            // txtPrizePercentage
             // 
-            this.txtPricePercentage.Location = new System.Drawing.Point(256, 382);
-            this.txtPricePercentage.Name = "txtPricePercentage";
-            this.txtPricePercentage.Size = new System.Drawing.Size(287, 43);
-            this.txtPricePercentage.TabIndex = 10;
+            this.txtPrizePercentage.Location = new System.Drawing.Point(256, 382);
+            this.txtPrizePercentage.Name = "txtPrizePercentage";
+            this.txtPrizePercentage.Size = new System.Drawing.Size(287, 43);
+            this.txtPrizePercentage.TabIndex = 10;
+            this.txtPrizePercentage.TextChanged += new System.EventHandler(this.txtPrizePercentage_TextChanged);
             // 
             // lbOr
             // 
@@ -148,9 +150,9 @@
             this.ClientSize = new System.Drawing.Size(610, 548);
             this.Controls.Add(this.btnCreatePrize);
             this.Controls.Add(this.lbOr);
-            this.Controls.Add(this.lbPricePercentage);
-            this.Controls.Add(this.txtPricePercentage);
-            this.Controls.Add(this.lbPriceAmount);
+            this.Controls.Add(this.lbPrizePercentage);
+            this.Controls.Add(this.txtPrizePercentage);
+            this.Controls.Add(this.lbPrizeAmount);
             this.Controls.Add(this.txtPrizeAmount);
             this.Controls.Add(this.lbPlaceName);
             this.Controls.Add(this.txtPlaceName);
@@ -162,6 +164,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "CreatePrize";
             this.Text = "CreatePrize";
+            this.Load += new System.EventHandler(this.CreatePrize_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,10 +177,10 @@
         private System.Windows.Forms.Label lbHeader;
         private System.Windows.Forms.Label lbPlaceName;
         private System.Windows.Forms.TextBox txtPlaceName;
-        private System.Windows.Forms.Label lbPriceAmount;
+        private System.Windows.Forms.Label lbPrizeAmount;
         private System.Windows.Forms.TextBox txtPrizeAmount;
-        private System.Windows.Forms.Label lbPricePercentage;
-        private System.Windows.Forms.TextBox txtPricePercentage;
+        private System.Windows.Forms.Label lbPrizePercentage;
+        private System.Windows.Forms.TextBox txtPrizePercentage;
         private System.Windows.Forms.Label lbOr;
         private System.Windows.Forms.Button btnCreatePrize;
     }
