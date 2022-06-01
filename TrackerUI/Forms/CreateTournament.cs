@@ -13,7 +13,7 @@ using TrackerUI.Interface;
 
 namespace TrackerUI.Forms
 {
-    public partial class CreateTournament : Form, IPrizeRequester
+    public partial class CreateTournament : Form, IPrizeRequester, ITeamRequester
     {
         readonly List<TeamModel> availableTeams = GlobalConfig.Connection.ReadTeam_All();
         readonly List<TeamModel> selectedTeams = new List<TeamModel>();
@@ -21,9 +21,9 @@ namespace TrackerUI.Forms
         public CreateTournament()
         {
             InitializeComponent();
-            InitializeLists();
+            ReloadLists();
         }
-        private void InitializeLists()
+        private void ReloadLists()
         {
             cbxSelectTeam.DataSource = null;
             cbxSelectTeam.DataSource = availableTeams;
@@ -49,7 +49,7 @@ namespace TrackerUI.Forms
 
                 selectedTeams.Add(teamModel);
 
-                InitializeLists();
+                ReloadLists();
             }
         }
 
@@ -63,7 +63,7 @@ namespace TrackerUI.Forms
 
                 availableTeams.Add(teamModel);
 
-                InitializeLists();
+                ReloadLists();
             }
         }
 
@@ -73,20 +73,32 @@ namespace TrackerUI.Forms
             frm.Show();
         }
 
-        public void PrizeComplete(PrizeModel prizeModel)
-        {
-            selectedPrizes.Add(prizeModel);
-            InitializeLists();
-        }
 
-        private void btnDeleteSelectedPrize_Click(object sender, EventArgs e)
+        private void BtnDeleteSelectedPrize_Click(object sender, EventArgs e)
         {
             PrizeModel prizeModel = (PrizeModel)lbxPrizesList.SelectedItem;
             if (prizeModel != null)
             {
                 selectedPrizes.Remove(prizeModel);
-                InitializeLists();
+                ReloadLists();
             }
+        }
+        public void PrizeComplete(PrizeModel prizeModel)
+        {
+            selectedPrizes.Add(prizeModel);
+            ReloadLists();
+        }
+
+        public void TeamComplete(TeamModel teamModel)
+        {
+            selectedTeams.Add(teamModel);
+            ReloadLists();
+        }
+
+        private void LnklbCreateNew_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CreateTeam frm = new CreateTeam(this);
+            frm.Show();
         }
     }
 }

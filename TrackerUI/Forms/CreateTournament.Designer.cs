@@ -120,6 +120,7 @@
             this.lnklbCreateNew.TabIndex = 7;
             this.lnklbCreateNew.TabStop = true;
             this.lnklbCreateNew.Text = "Create New";
+            this.lnklbCreateNew.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnklbCreateNew_LinkClicked);
             // 
             // btnAddTeam
             // 
@@ -178,7 +179,7 @@
             this.btnDeleteSelectedPrize.TabIndex = 16;
             this.btnDeleteSelectedPrize.Text = "Delete Selected";
             this.btnDeleteSelectedPrize.UseVisualStyleBackColor = true;
-            this.btnDeleteSelectedPrize.Click += new System.EventHandler(this.btnDeleteSelectedPrize_Click);
+            this.btnDeleteSelectedPrize.Click += new System.EventHandler(this.BtnDeleteSelectedPrize_Click);
             // 
             // lbPrizes
             // 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrackerLib.Classes;
 using TrackerLib.Models;
+using TrackerUI.Interface;
 
 namespace TrackerUI.Forms
 {
@@ -16,12 +17,14 @@ namespace TrackerUI.Forms
     {
         private readonly List<PersonModel> availableTeamMembers = GlobalConfig.Connection.ReadPerson_All();
         private readonly List<PersonModel> selectedTeamMembers = new List<PersonModel>();
-        public CreateTeam()
+        ITeamRequester callingForm;
+        public CreateTeam(ITeamRequester caller)
         {
             InitializeComponent();
-            SetDataSourceForLists();
+            ReloadLists();
+            callingForm = caller;
         }
-        private void SetDataSourceForLists()
+        private void ReloadLists()
         {
             cbxSelectTeam.DataSource = null;
             cbxSelectTeam.DataSource = availableTeamMembers;
@@ -48,7 +51,7 @@ namespace TrackerUI.Forms
 
                 selectedTeamMembers.Add(personModel);
 
-                SetDataSourceForLists();
+                ReloadLists();
 
                 txtFirstName.Text = "";
                 txtLastName.Text = "";
@@ -93,7 +96,7 @@ namespace TrackerUI.Forms
 
                 selectedTeamMembers.Add(personModel);
 
-                SetDataSourceForLists();
+                ReloadLists();
             }
         }
 
@@ -107,7 +110,7 @@ namespace TrackerUI.Forms
 
                 availableTeamMembers.Add(personModel);
 
-                SetDataSourceForLists();
+                ReloadLists();
             }
         }
 
@@ -119,6 +122,8 @@ namespace TrackerUI.Forms
                 TeamMembers = selectedTeamMembers
             };
             GlobalConfig.Connection.CreateTeam(teamModel);
+            callingForm.TeamComplete(teamModel);
+            this.Close();
         }
     }
 }
