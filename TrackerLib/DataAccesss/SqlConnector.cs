@@ -14,7 +14,7 @@ namespace TrackerLib.DataAccess
     {
         public PersonModel CreatePerson(PersonModel personModel)
         {
-            using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(GlobalConfig.GetConnectionString("TournamentTracker")))
+            using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString))
             {
                 var p = new DynamicParameters();
                 p.Add("@FirstName", personModel.FirstName);
@@ -39,7 +39,7 @@ namespace TrackerLib.DataAccess
         public PrizeModel CreatePrize(PrizeModel prizeModel)
         {
             using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(
-                GlobalConfig.GetConnectionString("TournamentTracker"))
+                GlobalConfig.ConnectionString)
                 )
             {
                 var p = new DynamicParameters();
@@ -60,7 +60,7 @@ namespace TrackerLib.DataAccess
         public TeamModel CreateTeam(TeamModel teamModel)
         {
             using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(
-                GlobalConfig.GetConnectionString("TournamentTracker")))
+                GlobalConfig.ConnectionString))
             {
                 var p = new DynamicParameters();
                 p.Add("@TeamName", teamModel.TeamName);
@@ -83,11 +83,20 @@ namespace TrackerLib.DataAccess
             }
         }
 
+        public TournamentModel CreateTournament(TournamentModel tournamentModel)
+        {
+            using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(
+                GlobalConfig.ConnectionString))
+            {
+
+            }
+        }
+
         public List<PersonModel> ReadPerson_All()
         {
             List<PersonModel> result;
             using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(
-                GlobalConfig.GetConnectionString("TournamentTracker"))
+                GlobalConfig.ConnectionString)
                 )
             {
                 result = conn.Query<PersonModel>("People_GetAll", commandType: CommandType.StoredProcedure).ToList();
@@ -99,7 +108,7 @@ namespace TrackerLib.DataAccess
         {
             List<TeamModel> result;
             using (IDbConnection conn = new System.Data.SqlClient.SqlConnection(
-                GlobalConfig.GetConnectionString("TournamentTracker"))
+                GlobalConfig.ConnectionString)
                 )
             {
                 result = conn.Query<TeamModel>("Teams_GetAll", commandType: CommandType.StoredProcedure).ToList();
