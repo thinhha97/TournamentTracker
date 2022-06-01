@@ -87,7 +87,7 @@
             this.btnAddTeamMember.TabIndex = 6;
             this.btnAddTeamMember.Text = "Add Team Member";
             this.btnAddTeamMember.UseVisualStyleBackColor = true;
-            this.btnAddTeamMember.Click += new System.EventHandler(this.btnAddTeamMember_Click);
+            this.btnAddTeamMember.Click += new System.EventHandler(this.BtnAddTeamMember_Click);
             // 
             // cbxSelectTeam
             // 
@@ -133,7 +133,7 @@
             this.btnCreateMember.TabIndex = 16;
             this.btnCreateMember.Text = "Create Member";
             this.btnCreateMember.UseVisualStyleBackColor = true;
-            this.btnCreateMember.Click += new System.EventHandler(this.btnCreateMember_Click);
+            this.btnCreateMember.Click += new System.EventHandler(this.BtnCreateMember_Click);
             // 
             // txtCellphone
             // 
@@ -231,7 +231,7 @@
             this.btnDeleteSelectedTeamMember.TabIndex = 19;
             this.btnDeleteSelectedTeamMember.Text = "Delete Selected";
             this.btnDeleteSelectedTeamMember.UseVisualStyleBackColor = true;
-            this.btnDeleteSelectedTeamMember.Click += new System.EventHandler(this.btnDeleteSelectedTeamMember_Click);
+            this.btnDeleteSelectedTeamMember.Click += new System.EventHandler(this.BtnDeleteSelectedTeamMember_Click);
             // 
             // btnCreateTeam
             // 
@@ -241,7 +241,7 @@
             this.btnCreateTeam.TabIndex = 20;
             this.btnCreateTeam.Text = "Create Team";
             this.btnCreateTeam.UseVisualStyleBackColor = true;
-            this.btnCreateTeam.Click += new System.EventHandler(this.btnCreateTeam_Click);
+            this.btnCreateTeam.Click += new System.EventHandler(this.BtnCreateTeam_Click);
             // 
             // CreateTeam
             // 

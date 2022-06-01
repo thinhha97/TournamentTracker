@@ -32,15 +32,17 @@ namespace TrackerUI.Forms
             lbxTeamMembers.DisplayMember = "FullName";
         }
 
-        private void btnCreateMember_Click(object sender, EventArgs e)
+        private void BtnCreateMember_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
             {
-                PersonModel personModel = new PersonModel();
-                personModel.FirstName = txtFirstName.Text;
-                personModel.LastName = txtLastName.Text;
-                personModel.EmailAddress = txtEmail.Text;
-                personModel.CellPhoneNumber = txtCellphone.Text;
+                PersonModel personModel = new PersonModel
+                {
+                    FirstName = txtFirstName.Text,
+                    LastName = txtLastName.Text,
+                    EmailAddress = txtEmail.Text,
+                    CellPhoneNumber = txtCellphone.Text
+                };
 
                 GlobalConfig.Connection.CreatePerson(personModel);
 
@@ -81,7 +83,7 @@ namespace TrackerUI.Forms
             return true;
         }
 
-        private void btnAddTeamMember_Click(object sender, EventArgs e)
+        private void BtnAddTeamMember_Click(object sender, EventArgs e)
         {
             PersonModel personModel = (PersonModel)cbxSelectTeam.SelectedItem;
 
@@ -95,7 +97,7 @@ namespace TrackerUI.Forms
             }
         }
 
-        private void btnDeleteSelectedTeamMember_Click(object sender, EventArgs e)
+        private void BtnDeleteSelectedTeamMember_Click(object sender, EventArgs e)
         {
             PersonModel personModel = (PersonModel)lbxTeamMembers.SelectedItem;
 
@@ -109,11 +111,13 @@ namespace TrackerUI.Forms
             }
         }
 
-        private void btnCreateTeam_Click(object sender, EventArgs e)
+        private void BtnCreateTeam_Click(object sender, EventArgs e)
         {
-            TeamModel teamModel = new TeamModel();
-            teamModel.TeamName = txtTeamName.Text;
-            teamModel.TeamMembers = selectedTeamMembers;
+            TeamModel teamModel = new TeamModel
+            {
+                TeamName = txtTeamName.Text,
+                TeamMembers = selectedTeamMembers
+            };
             GlobalConfig.Connection.CreateTeam(teamModel);
         }
     }
