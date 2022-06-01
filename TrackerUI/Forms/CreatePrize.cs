@@ -17,7 +17,7 @@ namespace TrackerUI.Forms
 {
     public partial class CreatePrize : Form
     {
-        IPrizeRequester callingForm;
+        readonly IPrizeRequester callingForm;
         public CreatePrize(IPrizeRequester caller)
         {
             InitializeComponent();

@@ -17,7 +17,7 @@ namespace TrackerUI.Forms
     {
         private readonly List<PersonModel> availableTeamMembers = GlobalConfig.Connection.ReadPerson_All();
         private readonly List<PersonModel> selectedTeamMembers = new List<PersonModel>();
-        ITeamRequester callingForm;
+        readonly ITeamRequester callingForm;
         public CreateTeam(ITeamRequester caller)
         {
             InitializeComponent();
@@ -100,7 +100,7 @@ namespace TrackerUI.Forms
             }
         }
 
-        private void BtnDeleteSelectedTeamMember_Click(object sender, EventArgs e)
+        private void BtnRemoveSelectedTeamMember_Click(object sender, EventArgs e)
         {
             PersonModel personModel = (PersonModel)lbxTeamMembers.SelectedItem;
 

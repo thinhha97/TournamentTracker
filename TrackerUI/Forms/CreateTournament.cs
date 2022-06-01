@@ -53,7 +53,7 @@ namespace TrackerUI.Forms
             }
         }
 
-        private void BtnDeleteSelectedTeam_Click(object sender, EventArgs e)
+        private void BtnRemoveSelectedTeam_Click(object sender, EventArgs e)
         {
             TeamModel teamModel = (TeamModel)lbxTournamentTeams.SelectedItem;
 
@@ -74,7 +74,7 @@ namespace TrackerUI.Forms
         }
 
 
-        private void BtnDeleteSelectedPrize_Click(object sender, EventArgs e)
+        private void BtnRemoveSelectedPrize_Click(object sender, EventArgs e)
         {
             PrizeModel prizeModel = (PrizeModel)lbxPrizesList.SelectedItem;
             if (prizeModel != null)
@@ -99,6 +99,11 @@ namespace TrackerUI.Forms
         {
             CreateTeam frm = new CreateTeam(this);
             frm.Show();
+        }
+
+        private void BtnCreateTournament_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

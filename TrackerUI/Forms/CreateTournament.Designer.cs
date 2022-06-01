@@ -41,8 +41,8 @@
             this.btnCreatePrize = new System.Windows.Forms.Button();
             this.lbxTournamentTeams = new System.Windows.Forms.ListBox();
             this.lbTeams = new System.Windows.Forms.Label();
-            this.btnDeleteSelectedTeam = new System.Windows.Forms.Button();
-            this.btnDeleteSelectedPrize = new System.Windows.Forms.Button();
+            this.btnRemoveSelectedTeam = new System.Windows.Forms.Button();
+            this.btnRemoveSelectedPrize = new System.Windows.Forms.Button();
             this.lbPrizes = new System.Windows.Forms.Label();
             this.lbxPrizesList = new System.Windows.Forms.ListBox();
             this.btnCreateTournament = new System.Windows.Forms.Button();
@@ -161,25 +161,25 @@
             this.lbTeams.TabIndex = 11;
             this.lbTeams.Text = "Teams";
             // 
-            // btnDeleteSelectedTeam
+            // btnRemoveSelectedTeam
             // 
-            this.btnDeleteSelectedTeam.Location = new System.Drawing.Point(837, 156);
-            this.btnDeleteSelectedTeam.Name = "btnDeleteSelectedTeam";
-            this.btnDeleteSelectedTeam.Size = new System.Drawing.Size(111, 68);
-            this.btnDeleteSelectedTeam.TabIndex = 13;
-            this.btnDeleteSelectedTeam.Text = "Delete Selected";
-            this.btnDeleteSelectedTeam.UseVisualStyleBackColor = true;
-            this.btnDeleteSelectedTeam.Click += new System.EventHandler(this.BtnDeleteSelectedTeam_Click);
+            this.btnRemoveSelectedTeam.Location = new System.Drawing.Point(837, 156);
+            this.btnRemoveSelectedTeam.Name = "btnRemoveSelectedTeam";
+            this.btnRemoveSelectedTeam.Size = new System.Drawing.Size(111, 68);
+            this.btnRemoveSelectedTeam.TabIndex = 13;
+            this.btnRemoveSelectedTeam.Text = "Remove Selected";
+            this.btnRemoveSelectedTeam.UseVisualStyleBackColor = true;
+            this.btnRemoveSelectedTeam.Click += new System.EventHandler(this.BtnRemoveSelectedTeam_Click);
             // 
-            // btnDeleteSelectedPrize
+            // btnRemoveSelectedPrize
             // 
-            this.btnDeleteSelectedPrize.Location = new System.Drawing.Point(837, 376);
-            this.btnDeleteSelectedPrize.Name = "btnDeleteSelectedPrize";
-            this.btnDeleteSelectedPrize.Size = new System.Drawing.Size(111, 68);
-            this.btnDeleteSelectedPrize.TabIndex = 16;
-            this.btnDeleteSelectedPrize.Text = "Delete Selected";
-            this.btnDeleteSelectedPrize.UseVisualStyleBackColor = true;
-            this.btnDeleteSelectedPrize.Click += new System.EventHandler(this.BtnDeleteSelectedPrize_Click);
+            this.btnRemoveSelectedPrize.Location = new System.Drawing.Point(837, 376);
+            this.btnRemoveSelectedPrize.Name = "btnRemoveSelectedPrize";
+            this.btnRemoveSelectedPrize.Size = new System.Drawing.Size(111, 68);
+            this.btnRemoveSelectedPrize.TabIndex = 16;
+            this.btnRemoveSelectedPrize.Text = "Remove Selected";
+            this.btnRemoveSelectedPrize.UseVisualStyleBackColor = true;
+            this.btnRemoveSelectedPrize.Click += new System.EventHandler(this.BtnRemoveSelectedPrize_Click);
             // 
             // lbPrizes
             // 
@@ -208,6 +208,7 @@
             this.btnCreateTournament.TabIndex = 17;
             this.btnCreateTournament.Text = "Create Tournament";
             this.btnCreateTournament.UseVisualStyleBackColor = true;
+            this.btnCreateTournament.Click += new System.EventHandler(this.BtnCreateTournament_Click);
             // 
             // CreateTournament
             // 
@@ -216,10 +217,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(961, 617);
             this.Controls.Add(this.btnCreateTournament);
-            this.Controls.Add(this.btnDeleteSelectedPrize);
+            this.Controls.Add(this.btnRemoveSelectedPrize);
             this.Controls.Add(this.lbPrizes);
             this.Controls.Add(this.lbxPrizesList);
-            this.Controls.Add(this.btnDeleteSelectedTeam);
+            this.Controls.Add(this.btnRemoveSelectedTeam);
             this.Controls.Add(this.lbTeams);
             this.Controls.Add(this.lbxTournamentTeams);
             this.Controls.Add(this.btnCreatePrize);
@@ -256,8 +257,8 @@
         private System.Windows.Forms.Button btnCreatePrize;
         private System.Windows.Forms.ListBox lbxTournamentTeams;
         private System.Windows.Forms.Label lbTeams;
-        private System.Windows.Forms.Button btnDeleteSelectedTeam;
-        private System.Windows.Forms.Button btnDeleteSelectedPrize;
+        private System.Windows.Forms.Button btnRemoveSelectedTeam;
+        private System.Windows.Forms.Button btnRemoveSelectedPrize;
         private System.Windows.Forms.Label lbPrizes;
         private System.Windows.Forms.ListBox lbxPrizesList;
         private System.Windows.Forms.Button btnCreateTournament;
