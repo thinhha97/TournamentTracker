@@ -2,7 +2,7 @@
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1000, 1), 
     [MatchupId] INT NOT NULL, 
-    [ParentMatchupId] INT NOT NULL, 
+    [ParentMatchupId] INT NULL, 
     [TeamCompetingId] INT NULL, 
     [Score] FLOAT NULL DEFAULT 0, 
     [CreatedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(), 

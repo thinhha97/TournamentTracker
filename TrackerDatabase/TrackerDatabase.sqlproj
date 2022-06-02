@@ -84,5 +84,10 @@
     <Build Include="Programmability\Stored Procedures\TournamentPrizes_InsertTournamentPrize.sql" />
     <Build Include="Programmability\Stored Procedures\TournamentEntries_InsertTournamentEntry.sql" />
     <Build Include="Programmability\Stored Procedures\Matchups_InsertMatchup.sql" />
+    <Build Include="Programmability\Stored Procedures\MatchupEntries_InsertMatchupEntry.sql" />
+    <Build Include="Programmability\Stored Procedures\Tournaments_GetAll.sql" />
+    <Build Include="Programmability\Stored Procedures\GetTeamsByTournamentId.sql" />
+    <Build Include="Programmability\Stored Procedures\GetMatchupsByTournamentId.sql" />
+    <Build Include="Programmability\Stored Procedures\GetMatchupEntriesByMatchupId.sql" />
   </ItemGroup>
 </Project>

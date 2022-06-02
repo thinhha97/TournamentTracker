@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\GlobalConfig.cs" />
+    <Compile Include="Classes\TournamentLogic.cs" />
     <Compile Include="Models\MatchupEntryModel.cs" />
     <Compile Include="Models\MatchupModel.cs" />
     <Compile Include="Models\PersonModel.cs" />

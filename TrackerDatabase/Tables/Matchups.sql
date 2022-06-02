@@ -7,7 +7,7 @@
     [CreatedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(), 
     [ModifiedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(), 
     CONSTRAINT [FK_Matchups_Teams] FOREIGN KEY ([WinnerId]) REFERENCES [Teams]([Id]) ON DELETE CASCADE, 
-    CONSTRAINT [FK_Matchups_Tournament] FOREIGN KEY ([TournamentId]) REFERENCES [Tournament]([Id])
+    CONSTRAINT [FK_Matchups_Tournament] FOREIGN KEY ([TournamentId]) REFERENCES [Tournaments]([Id])
 )
 
 GO
